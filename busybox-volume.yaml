@@ -1,0 +1,18 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: task-pv-pod
+spec:
+  volumes:
+    - name: myvolume-practice
+      persistentVolumeClaim:
+        claimName: mypvc-practice
+  containers:    
+    - name: task-pv-container
+      image: busybox
+      command:
+        - sleep
+        - "3600"
+      volumeMounts:
+        - mountPath: "/etc/foo"
+          name: myvolume-practice

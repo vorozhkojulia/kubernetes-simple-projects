@@ -1,0 +1,17 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  creationTimestamp: null
+  labels:
+    run: nginx-nodename
+  name: nginx-nodename
+  namespace: practice
+spec:
+  nodeName: kind-worker2
+  containers:
+  - image: nginx
+    name: nginx-nodename
+    resources: {}
+  dnsPolicy: ClusterFirst
+  restartPolicy: Always
+status: {}

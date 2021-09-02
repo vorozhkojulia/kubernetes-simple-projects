@@ -1,0 +1,14 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: busybox-user
+spec:
+  securityContext:
+    runAsUser: 101
+  containers:
+    - name: busybox-user
+      image: busybox
+      command:
+        - sleep
+        - "3600"
+      

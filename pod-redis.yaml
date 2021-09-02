@@ -1,0 +1,15 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: pod-redis
+  labels:
+    env: test
+spec:
+  containers:
+  - name: pod-redis
+    image: redis:alpine
+    imagePullPolicy: IfNotPresent
+  tolerations:
+  - key: "value1"
+    operator: "Exists"
+    effect: "NoSchedule"
